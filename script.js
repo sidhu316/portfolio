@@ -16,7 +16,6 @@ window.onload = typeWriter;
 
 /* HEADER SHOW ON SCROLL */
 const header = document.querySelector(".header");
-
 window.addEventListener("scroll", () => {
   header.classList.toggle("show", window.scrollY > 80);
 });
