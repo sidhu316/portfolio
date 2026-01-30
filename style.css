@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0b0b0e;
+  color: #fff;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: -100px;
+  width: 100%;
+  padding: 22px 8%;
+  background: rgba(11,11,14,0.85);
+  backdrop-filter: blur(8px);
+  transition: 0.4s ease;
+  opacity: 0;
+  z-index: 50;
+}
+
+.header.show {
+  top: 0;
+  opacity: 1;
+}
+
+.nav a {
+  color: #aaa;
+  margin-right: 25px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  overflow: hidden;
+}
+
+.bg-slideshow {
+  position: absolute;
+  inset: -15%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  opacity: 0.55;
+  animation: bgMove 25s linear infinite alternate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(11,11,14,0.8),
+    rgba(11,11,14,0.35)
+  );
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+/* TEXT */
+.typewriter {
+  font-size: 3.8rem;
+  font-weight: 700;
+  border-right: 3px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 1.8rem;
+  color: #aaa;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  color: #bbb;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
+  background: #fff;
+  color: #000;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #ccc;
+}
+
+/* SHOWREEL */
+.showreel {
+  padding: 110px 8%;
+}
+
+.showreel h3 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.video-wrapper {
+  max-width: 900px;
+  margin: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+}
+
+/* SHOWCASE */
+.showcase {
+  padding: 120px 8%;
+}
+
+.showcase h3 {
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.work {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s ease;
+}
+
+.work:hover img {
+  transform: scale(1.08);
+}
+
+/* ANIMATION */
+@keyframes bgMove {
+  from { transform: translate(-4%, -4%); }
+  to { transform: translate(4%, 4%); }
+}
